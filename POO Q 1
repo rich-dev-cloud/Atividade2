@@ -1,0 +1,109 @@
+public class PersonagemRPG {
+    // Atributos
+    private String nome;
+    private String classe;
+    private int nivel;
+    private int vida;
+    private int mana;
+    private int forca;
+    private int agilidade;
+    private int inteligencia;
+
+    // Construtor padrão
+    public PersonagemRPG() {
+        this.nome = "Ardyn";  // Nome do personagem definido
+        this.classe = "Guerreiro";
+        this.nivel = 1;
+        this.vida = 100;
+        this.mana = 50;
+        this.forca = 10;
+        this.agilidade = 10;
+        this.inteligencia = 10;
+    }
+
+    // Construtor com nome e classe
+    public PersonagemRPG(String nome, String classe) {
+        this.nome = nome;
+        this.classe = classe;
+        this.nivel = 1;
+        this.vida = 100;
+        this.mana = 50;
+        this.forca = 10;
+        this.agilidade = 10;
+        this.inteligencia = 10;
+    }
+
+    // Construtor completo
+    public PersonagemRPG(String nome, String classe, int nivel, int vida, int mana, int forca, int agilidade, int inteligencia) {
+        this.nome = nome;
+        this.classe = classe;
+        this.nivel = nivel;
+        this.vida = vida;
+        this.mana = mana;
+        this.forca = forca;
+        this.agilidade = agilidade;
+        this.inteligencia = inteligencia;
+    }
+
+    // Métodos
+
+    // 1. Exibir informações
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Classe: " + this.classe);
+        System.out.println("Nível: " + this.nivel);
+        System.out.println("Vida: " + this.vida);
+        System.out.println("Mana: " + this.mana);
+    }
+
+    // 2. Atacar
+    public void atacar(String alvo) {
+        int dano = this.forca * 2;
+        System.out.println(this.nome + " atacou " + alvo + " causando " + dano + " de dano!");
+    }
+
+    // 3. Lançar magia
+    public void lancarMagia(String alvo, String magia) {
+        if (this.mana >= 10) {
+            int danoMagico = this.inteligencia * 3;
+            this.mana -= 10;
+            System.out.println(this.nome + " lançou " + magia + " em " + alvo + ", causando " + danoMagico + " de dano mágico!");
+        } else {
+            System.out.println(this.nome + " não tem mana suficiente para lançar " + magia + "!");
+        }
+    }
+
+    // 4. Subir de nível
+    public void subirDeNivel() {
+        this.nivel++;
+        this.vida += 20;
+        this.mana += 10;
+        this.forca += 2;
+        this.agilidade += 2;
+        this.inteligencia += 2;
+        System.out.println(this.nome + " subiu para o nível " + this.nivel + "!");
+    }
+
+    // 5. Recuperar vida
+    public void recuperarVida(int quantidade) {
+        this.vida += quantidade;
+        System.out.println(this.nome + " recuperou " + quantidade + " pontos de vida.");
+    }
+
+    // 6. Recuperar mana
+    public void recuperarMana(int quantidade) {
+        this.mana += quantidade;
+        System.out.println(this.nome + " recuperou " + quantidade + " pontos de mana.");
+    }
+
+    // 7. Status do personagem
+    public void statusPersonagem() {
+        System.out.println("Status atual de " + this.nome + ": Vida = " + this.vida + ", Mana = " + this.mana);
+    }
+
+    public static void main(String[] args) {
+        // Criando o personagem Ardyn
+        PersonagemRPG ardyn = new PersonagemRPG();
+        ardyn.exibirInformacoes();
+    }
+}

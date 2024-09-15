@@ -1,0 +1,24 @@
+public class Main {
+    public static void main(String[] args) {
+        // Criando a primeira pessoa com dados fictícios
+        Pessoa pessoa1 = new Pessoa(
+            "João da Silva", 35, "123.456.789-01", "MG-12.345.678", 
+            "Rua das Flores, 100", "(31) 99999-9999", "joao.silva@exemplo.com", 
+            "Masculino", "Solteiro", "Brasileiro"
+        );
+        
+        // Criando a segunda pessoa com dados fictícios
+        Pessoa pessoa2 = new Pessoa(
+            "Maria de Souza", 28, "987.654.321-99", "SP-98.765.432", 
+            "Avenida Central, 200", "(11) 88888-8888", "maria.souza@exemplo.com", 
+            "Feminino", "Casada", "Brasileira"
+        );
+        
+        // Exibindo os dados das duas pessoas
+        System.out.println("Dados da primeira pessoa:");
+        pessoa1.exibirDados();
+        
+        System.out.println("\nDados da segunda pessoa:");
+        pessoa2.exibirDados();
+    }
+}
